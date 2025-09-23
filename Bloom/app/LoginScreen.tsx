@@ -1,24 +1,21 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LinearGradient } from "expo-linear-gradient";
+import { Link, useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
-  View,
+  Alert,
+  Image,
+  Platform,
+  StatusBar,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-  Image,
-  Alert,
-  StatusBar,
-  Platform,
+  View,
 } from "react-native";
-import { Link, useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getUsers } from '../services/userService';
 
-// Import our local user database
-import { users } from '../users'; 
 
-// Path to your logo image
 const bloomLogo = require("../assets/images/Logo.png");
 
 export default function LoginScreen() {
@@ -32,10 +29,8 @@ export default function LoginScreen() {
       return;
     }
 
-    // Get the most up-to-date list of users from storage
     const allUsers = await getUsers();
 
-    // Find a user that matches the entered email and password
     const user = allUsers.find(
       (u) => u.email.toLowerCase() === email.toLowerCase() && u.password === password
     );
@@ -117,8 +112,8 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   logo: {
-    width: 120, // Increased logo size
-    height: 60, // Increased logo size
+    width: 120,
+    height: 60,
     resizeMode: "contain",
   },
   contentContainer: {

@@ -1,18 +1,18 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LinearGradient } from "expo-linear-gradient";
+import { Link, useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
-  View,
+  Alert,
+  Image,
+  Platform,
+  StatusBar,
+  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
-  StyleSheet,
-  Image,
-  Alert,
-  StatusBar,
-  Platform,
+  View,
 } from "react-native";
-import { Link, useRouter } from "expo-router";
-import { LinearGradient } from "expo-linear-gradient";
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { addUser } from '../services/userService';
 
 // Path to your logo image

@@ -4,7 +4,6 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import { seedInitialUsers } from '../services/userService';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -14,9 +13,7 @@ export default function RootLayout() {
     'Lato-Light': require('../assets/fonts/Lato-Light.ttf'),
   });
 
-  // This effect hook runs once when the app layout is first rendered
   useEffect(() => {
-    // Seed the initial user data into AsyncStorage
     seedInitialUsers();
 
     if (fontsLoaded || fontError) {

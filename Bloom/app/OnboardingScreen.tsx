@@ -1,13 +1,13 @@
+import { LinearGradient } from "expo-linear-gradient";
+import { Link } from 'expo-router';
 import {
-    StyleSheet,
-    View,
-    Text,
-    Image,
-    TouchableOpacity,
-    StatusBar,
-  } from "react-native";
-  import { LinearGradient } from "expo-linear-gradient";
-  import { Link } from 'expo-router';
+  Image,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
   
   const bloomLogo = require("../assets/images/Logo.png");
   
@@ -51,8 +51,8 @@ import {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: "#000000", // Solid black background
-      justifyContent: "space-between", // Pushes content and buttons apart
+      backgroundColor: "#000000",
+      justifyContent: "space-between",
       alignItems: "center",
       paddingHorizontal: 20,
       paddingVertical: 60,
@@ -86,16 +86,16 @@ import {
     },
     loginButton: {
       paddingVertical: 18,
-      borderRadius: 50, // Fully rounded
+      borderRadius: 50,
       alignItems: "center",
       justifyContent: "center",
     },
     signupButton: {
       width: "90%",
       paddingVertical: 18,
-      borderRadius: 50, // Fully rounded
+      borderRadius: 50,
       borderWidth: 2,
-      borderColor: "#A050F0", // Purple border
+      borderColor: "#A050F0",
       alignItems: "center",
       justifyContent: "center",
     },
